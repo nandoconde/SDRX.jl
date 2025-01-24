@@ -15,6 +15,12 @@
     files::Vector{URI} = URI[]
 end
 
+function parse_node(node::Node, ::Type{FileSet})
+    # check attributes for id, artifact, comment
+    metadata = metadata_from_attributes(node)
+    # fileset
+end
+
 # 
 @kwdef mutable struct SDRMetadata
     fileset::Union{Nothing, FileSet} = nothing
